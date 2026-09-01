@@ -1,0 +1,25 @@
+import java.util.Scanner;
+
+public class NumeroEnArreglo {
+
+    public static void main(String[] args) {
+          int[] numeros = {4, 8, 15, 16, 23, 42, 7, 19};
+           Scanner scanner = new Scanner(System.in);
+        System.out.print("Ingresa el número a buscar: ");
+        int numeroBuscado = scanner.nextInt();
+        boolean encontrado= encontrarNumero(numeros, numeroBuscado);
+        System.out.println("El numero se encuentra dentro del arreglo?: " +encontrado);
+
+
+    }
+    public static boolean encontrarNumero( int[]numeros, int numeroBuscado){
+        boolean siEsta= false;
+        for(int i=0; i<numeros.length; i++){
+            if (numeros[i]==numeroBuscado) {
+                siEsta=true;
+            }
+        }
+        return siEsta;
+    }
+    
+ }
