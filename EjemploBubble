@@ -1,0 +1,35 @@
+public class EjemploBubble {
+    public static void main (String[] args){
+        int[] numeros = {4, 2, 7, 2, 9, 4, 2, 8, 4, 4, 1};
+        int resultado= realizarMetodo(numeros);
+        System.out.println("El numero que mas se repite es el: " +resultado);
+
+    }
+    public static int realizarMetodo(int[]numeros){
+        for(int i=0; i<numeros.length-1; i++){
+            for(int j=0; i<numeros.length-1-i; i++){
+                if (numeros[j]>numeros[j+1]){
+                    int temp= numeros[j];
+                    numeros[j]=numeros[j+1];
+                    numeros[j+1]= temp;
+                }
+            }
+
+        }
+        int masRepetido= numeros[0];
+        int contadorRepetidos=0;
+        int contador= 1;
+        for (int i=1; i<numeros.length; i++){
+            if(numeros[i]==numeros[i-1]){
+                contador=contador+1;
+            }else{
+                contador=1;
+            }
+            if(contador>contadorRepetidos){
+                contadorRepetidos= contador;
+                masRepetido=numeros[i];
+            }
+        }
+        return masRepetido;
+    }
+}
