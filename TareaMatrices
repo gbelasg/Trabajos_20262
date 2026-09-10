@@ -22,7 +22,7 @@ public class Matrices {
         //Dibujos de x en matriz
         dibujarEquis(matriz);
         System.out.println();
-        //cuadro superior en una matriz
+        //cuadro exterior en una matriz
         int tamanio= 5;
         obtenerCuadroSuperior(tamanio);
         //Matriz espiral de numeros
@@ -89,10 +89,10 @@ public class Matrices {
     }
 
     public static void obtenerCuadroSuperior(int tamanio) {
-        int altura= tamanio-2; //filas que va a ocupar el cuadro
+
         for (int i = 0; i < tamanio; i++) {
             for (int j = 0; j < tamanio; j++) {
-                if (i < altura && (i == 0 || i == altura- 1 || j == 0 || j == tamanio - 1)) { //indicadores para darle forma al cuadro
+                if (i == 0 || i == tamanio - 1 || j == 0 || j == tamanio - 1) { // ubicacion de las filas y columnas de el cuadro 
                     System.out.print(0 + "\t");
                 }else{
                     System.out.print(7 + "\t");
